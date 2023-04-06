@@ -4,19 +4,18 @@ import (
 	"embed"
 	"flag"
 	"fmt"
+	"github.com/alikhanich/wireguard-ui/emailer"
+	"github.com/alikhanich/wireguard-ui/handler"
+	"github.com/alikhanich/wireguard-ui/router"
+	"github.com/alikhanich/wireguard-ui/store"
+	"github.com/alikhanich/wireguard-ui/store/jsondb"
+	"github.com/alikhanich/wireguard-ui/util"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
-	"github.com/ngoduykhanh/wireguard-ui/store"
 	"io/fs"
 	"net/http"
 	"os"
 	"time"
-	rice "github.com/GeertJohan/go.rice"
-	"github.com/alikhanich/wireguard-ui/emailer"
-	"github.com/alikhanich/wireguard-ui/handler"
-	"github.com/alikhanich/wireguard-ui/router"
-	"github.com/alikhanich/wireguard-ui/store/jsondb"
-	"github.com/alikhanich/wireguard-ui/util"
 )
 
 var (
@@ -41,7 +40,7 @@ var (
 	flagSessionSecret  string
 	flagWgConfTemplate string
 	flagBasePath       string
-	flagApiKey		   string
+	flagApiKey         string
 )
 
 const (
@@ -117,7 +116,6 @@ func init() {
 	fmt.Println("Custom wg.conf\t:", util.WgConfTemplate)
 	fmt.Println("Base path\t:", util.BasePath+"/")
 }
-
 
 func main() {
 	db, err := jsondb.New("./db")

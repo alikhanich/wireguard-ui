@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/ngoduykhanh/wireguard-ui/store"
+	"github.com/alikhanich/wireguard-ui/store"
 	"golang.org/x/mod/sumdb/dirhash"
 	"io"
 	"io/fs"
@@ -18,9 +18,9 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/alikhanich/wireguard-ui/model"
 	externalip "github.com/glendc/go-external-ip"
 	"github.com/labstack/gommon/log"
-	"github.com/alikhanich/wireguard-ui/model"
 	"github.com/sdomino/scribble"
 )
 
