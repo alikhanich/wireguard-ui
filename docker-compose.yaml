@@ -11,7 +11,7 @@ services:
     environment:
       - SESSION_SECRET=vnsjdvb9134f39hvn9249
       - WGUI_USERNAME=alpha
-      - WGUI_PASSWORD=Negjqgfhjkm1!
+      - WGUI_PASSWORD=
       - WGUI_MANAGE_START=false
       - WGUI_MANAGE_RESTART=false
       - WGUI_API_KEY=test

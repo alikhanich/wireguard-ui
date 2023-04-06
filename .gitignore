@@ -25,3 +25,4 @@ node_modules/
 examples/docker-compose/config
 examples/docker-compose/db
 .DS_Store
+.env
