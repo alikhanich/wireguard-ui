@@ -19,7 +19,7 @@ import (
 // TemplateRegistry is a custom html/template renderer for Echo framework
 type TemplateRegistry struct {
 	templates map[string]*template.Template
-	extraData map[string]string
+	extraData map[string]interface{}
 }
 
 // Render e.Renderer interface
@@ -66,7 +66,7 @@ func apiKeyMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 	}
 }
 // New function
-func New(tmplDir fs.FS, extraData map[string]string, secret []byte) *echo.Echo {
+func New(tmplDir fs.FS, extraData map[string]interface{}, secret []byte) *echo.Echo {
 	e := echo.New()
 
 	store := sessions.NewCookieStore(secret)
